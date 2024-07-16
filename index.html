@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #age {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #jenkel {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #hasil {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #keterangan {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kalkulator BMI</h1>
+    <div class="card" style="width:auto;">
+
+        <div class="card-body">
+
+            <label for="basic-url" class="form-label">Jenis Kelamin</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" value="Laki-laki" checked>
+                <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" value="Perempuan">
+                <label class="form-check-label" for="inlineRadio2">Perempuan</label>
+            </div>
+
+            <label for="basic-url" class="form-label">Berat Badan (kg)</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
+                    </svg></span>
+                <input type="number" min="0" class="form-control" id="berat" aria-describedby="basic-addon3" required>
+            </div>
+
+            <label for="basic-url" class="form-label">Usia (tahun)</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
+                    </svg></span>
+                <input type="number" min="0" class="form-control" id="usia" aria-describedby="basic-addon3" required>
+            </div>
+    
+            <label for="basic-url" class="form-label">Tinggi Badan (cm)</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
+                    </svg></span>
+                <input type="number" min="0" class="form-control" id="tinggi" aria-describedby="basic-addon3" required>
+            </div>
+    
+            <button onclick="hitungBMI()" style="margin-bottom:auto;">Hitung BMI</button>
+        </div>
+
+
+        <div id="hasil"></div>
+        <div id="keterangan"></div>
+        <div id="jenkel"></div>
+        <div id="age"></div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script>
+        function hitungBMI() {
+            var tinggi = parseFloat(document.getElementById('tinggi').value);
+            var berat = parseFloat(document.getElementById('berat').value);
+            var gender = document.querySelector('input[name="jenis_kelamin"]:checked').value;
+            var umur = parseFloat(document.getElementById('usia').value);
+
+            if (tinggi <= 0 || berat <= 0) {
+                alert('Tinggi dan berat badan harus lebih dari 0!');
+                return;
+            }
+
+            var bmi = berat / ((tinggi / 100) * (tinggi / 100));
+
+            var hasil = document.getElementById('hasil');
+            hasil.innerHTML = 'BMI Anda: ' + bmi.toFixed(2);
+
+            var keterangan = document.getElementById('keterangan');
+            if (bmi < 18.5) {
+                keterangan.innerHTML = 'Kategori: Kurus';
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                keterangan.innerHTML = 'Kategori: Normal';
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                keterangan.innerHTML = 'Kategori: Kelebihan Berat Badan';
+            } else {
+                keterangan.innerHTML = 'Kategori: Obesitas';
+            }
+            jenkel.innerHTML = 'Jenis kelamin:' +gender;
+            age.innerHTML = 'Usia anda:' +umur;
+
+        }
+    </script>
+</body>
+</html>
